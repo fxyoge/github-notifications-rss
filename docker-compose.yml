@@ -1,0 +1,9 @@
+services:
+  github-notifications-rss:
+    build: .
+    restart: unless-stopped
+    env_file:
+      - .env
+    ports:
+      - "8083:8000"
+
