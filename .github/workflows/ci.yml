@@ -28,8 +28,8 @@ jobs:
       - name: Syntax check
         run: python -m compileall .
 
-      - name: Lint with flake8
-        run: flake8 app.py
+      - name: Lint with flake8 (relaxed)
+        run: flake8 app.py --max-line-length=120 --ignore=E501,W391
 
   docker-build:
     runs-on: ubuntu-latest

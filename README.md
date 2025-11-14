@@ -5,8 +5,6 @@ This is a small service that turns your GitHub notifications into an RSS feed.
 You give it a GitHub personal access token.
 It calls the `/notifications` API, filters the data, and serves a clean RSS 2.0 feed that your reader can subscribe to.
 
----
-
 ## What it does
 
 - Fetches GitHub notifications using the official API
@@ -25,8 +23,6 @@ The RSS items look roughly like this:
 - Description: reason, type, repo, unread flag and timestamps
 
 Descriptions can be HTML or plain text, depending on config.
-
----
 
 ## Quick start with Docker
 
@@ -55,8 +51,6 @@ If your compose file maps port `8083:8000`, the feed is available at:
 
 Add `http://localhost:8083/feed` to your RSS reader and you are done.
 
----
-
 ## Token and scopes
 
 You need a GitHub Personal Access Token (classic).
@@ -65,8 +59,6 @@ You need a GitHub Personal Access Token (classic).
   - `public_repo` and `read:user` are usually enough
 - With private repositories:
   - include `repo`
-
----
 
 ## Basic configuration
 
@@ -103,8 +95,6 @@ BIND_PORT=8000
 
 You can tune this later when you know what kind of notifications you want to see or hide. For many people the defaults should be fine.
 
----
-
 ## Status endpoint
 
 The `/health` endpoint returns a small JSON payload, for example:
@@ -121,8 +111,6 @@ The `/health` endpoint returns a small JSON payload, for example:
 - `ok` means last fetch worked
 - `degraded` means GitHub failed but an older cached feed is still served
 - `error` means there is no valid cache and the last fetch failed
-
----
 
 ## License
 
